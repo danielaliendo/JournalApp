@@ -65,6 +65,11 @@ export const notesReducer = (state = initialState, action) => {
                 active: null,
                 notes: []
             }
+        case types.notesInactive:
+            return {
+                ...state,
+                active: null
+            }
         default:
             return state;
     }

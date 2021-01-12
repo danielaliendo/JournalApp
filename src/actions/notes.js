@@ -123,3 +123,7 @@ export const noteLogout = () => ({
     type: types.notesLogoutCleaning
 
 })
+
+export const noteInactive = () => ({
+    type: types.notesInactive
+})
