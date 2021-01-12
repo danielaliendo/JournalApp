@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 import {
-    BrowserRouter as Router,
     Switch,
-    Redirect
+    Redirect,
+    HashRouter
   } from 'react-router-dom';
 
 import { AuthRouter } from './AuthRouter';
@@ -47,7 +47,7 @@ export const AppRouter = () => {
     }
 
     return (
-        <Router>
+        <HashRouter>
             <div>
                 <Switch>
                     <PublicRoute 
@@ -68,6 +68,6 @@ export const AppRouter = () => {
 
                 </Switch>
             </div>
-        </Router>
+        </HashRouter>
     )
 }

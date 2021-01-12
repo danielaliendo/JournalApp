@@ -13,8 +13,8 @@ export const RegisterScreen = () => {
     const { ui:{msgError} } = useSelector( state => state);
 
     const [ formValues, handleInputChange ] = useForm({
-        name: 'Daniela',
-        email: 'fdsg@sdfda.com',
+        name: '',
+        email: '',
         password: '',
         password2: ''
     });
