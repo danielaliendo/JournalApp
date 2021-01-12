@@ -23,7 +23,6 @@ export const JournalScreen = () => {
 
             </main>
 
-
         </div>
     )
 }

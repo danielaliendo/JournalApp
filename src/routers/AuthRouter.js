@@ -26,7 +26,9 @@ export const AuthRouter = () => {
 
                 </Switch>
             </div>
-
+        <footer className="auth__footer">
+            Created by Daniela Liendo
+        </footer>
         </div>
     )
 }
