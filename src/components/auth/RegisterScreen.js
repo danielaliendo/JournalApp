@@ -13,8 +13,8 @@ export const RegisterScreen = () => {
     const { ui:{msgError} } = useSelector( state => state);
 
     const [ formValues, handleInputChange ] = useForm({
-        name: '',
-        email: '',
+        name: 'Daniela',
+        email: 'fdsg@sdfda.com',
         password: '',
         password2: ''
     });
@@ -28,18 +28,17 @@ export const RegisterScreen = () => {
             dispatch( startRegisterWithEmailAndPasswordName(email, password, name) )
         }
     }
-
+    
     const isFormValid = () => {
         if ( name.trim().length === 0) {
-            
-            return dispatch(setError('Name is required'))
-            // return false;
+            dispatch(setError('Name is required'))
+            return false;
         } else if ( !validator.isEmail( email) ) {
-            return dispatch(setError('Email isnt valid'))
-            // return false;
-        } else if ( password !== password2 || password.length < 5) {
-            return dispatch(setError('Password should be at least 6 characters and match each other'))
-            // return false;
+            dispatch(setError('Email isnt valid'))
+            return false;
+        } else if (password !== password2 || password.length < 6) {
+            dispatch(setError('Password should be at least 6 characters and match each other'))
+            return false;
         }
 
         dispatch(removeError())
@@ -100,6 +99,7 @@ export const RegisterScreen = () => {
 
 
                 <button
+                    // disabled={!isFormValid()}
                     type="submit"
                     className="btn btn-primary btn-block mb-5"
                 >
